@@ -1,32 +1,46 @@
 # Vulnerable App
 
-This is a vulnerable web application designed for educational purposes to demonstrate how Cross-Site Scripting (XSS) attacks can occur and how to mitigate them. The application is containerized with Docker to ensure portability and easy setup.
+This project demonstrates a Cross-Site Scripting (XSS) vulnerability in a Node.js application and provides steps to identify, exploit, and fix the issue. The application is containerized using Docker for portability and ease of use.
 
 ---
 
 ## Features
-- A simple Node.js and Express.js application.
-- Demonstrates an XSS vulnerability.
-- Includes sanitized code to mitigate the XSS vulnerability.
-- Dockerized for easy deployment.
+- Demonstrates an XSS vulnerability on a `/search` endpoint.
+- Explains the cause of the vulnerability and the fix.
+- Allows testing of XSS exploits using Burp Suite.
+- Includes sanitized code to prevent the XSS vulnerability.
+- Dockerized for deployment.
 
 ---
 
 ## Requirements
-
-Make sure you have the following installed:
-- [Node.js](https://nodejs.org/) (16.x or above)
-- [Docker](https://www.docker.com/) (latest version)
-- [Git](https://git-scm.com/) (latest version)
+- **Node.js** (16.x or above)
+- **Docker** (latest version)
+- **Burp Suite** (latest version)
+- A Linux environment or a cloud instance (e.g., DigitalOcean)
 
 ---
 
 ## Setup Instructions
 
 ### Step 1: Clone the Repository
+Clone the repository to your local or remote environment:
 ```bash
 git clone https://github.com/HanjolineJ/vulnerable-app2.git
 cd vulnerable-app2
+
 npm install
 node app.js
 http://localhost:3000
+
+## Accessing Docker as a Non-Root User
+
+### Step 1: Start the Container
+Ensure the container is running:
+```bash
+docker start vulnerable-app
+docker ps
+
+su - demo
+
+docker exec -it vulnerable-app bash
