@@ -27,3 +27,6 @@ Make sure you have the following installed:
 ```bash
 git clone https://github.com/HanjolineJ/vulnerable-app2.git
 cd vulnerable-app2
+npm install
+node app.js
+http://localhost:3000
